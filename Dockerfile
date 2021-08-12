@@ -16,7 +16,18 @@ RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.s
 ENV PATH /home/user/miniconda3/bin:$PATH
 
 # Python packages (add new ones to the list here if necessary)
-RUN conda install pytorch=1.5.1 torchvision tensorboard==2.0.0 cudatoolkit=10.2 matplotlib -c pytorch
+# RUN conda install pytorch=1.5.1 torchvision tensorboard==2.0.0 cudatoolkit=10.2 matplotlib -c pytorch
+RUN pip install torch torchvision torchaudio
 RUN pip install gym
+RUN pip install nltk
+RUN pip install numpy
+RUN pip install termcolor
+RUN pip install tqdm
+RUN pip install torch
+RUN pip install scikit-learn
+RUN pip install scipy
+RUN pip install PyYAML
+RUN pip install sklearn
+RUN pip install wandb
 
 ADD . /home/user/
